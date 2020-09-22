@@ -3,7 +3,12 @@
 
 int main(void)
 {
+#define string(f)    f    
+#define str(f)     f  charleix;
     int c;
+    string(char)  ww;
+    str(char)
+        charleix = 'a';
 #define a 4
 #define b 5+1
 #define MUL(a,b) ((a)*(b))//修改处1
@@ -14,14 +19,17 @@ int main(void)
 
 #define GPIO_pin_4  6
 #define SPI1_MISO_GPIO_Pin_x  GPIO_pin_4
+#define SPI11_MISO_GPIO_Pin_x  67
 #define _SPIx_Pin_x(spix)  SPI##spix##_MISO_GPIO_Pin_x
 #define SPIx_Pin_x(spix) _SPIx_Pin_x(spix)
+//#define SPIx_Pin_x_(spix) _SPIx_Pin_x((spix)##1)
 #define SPIx                   1
 #define asddf "qsdqdqw1252"
     int l = SPIx_Pin_x(SPIx);
+    //int l2 = SPIx_Pin_x_(SPIx);
    // int n = _SPIx_Pin_x(SPIx);
     int dx = 5;
-    int amd[sizeof(asddf)] = 5;
+    int amd[sizeof(asddf)] = {0};
 
 #define v1 "Etb"
 #define VV  "v2"
