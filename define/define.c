@@ -11,9 +11,16 @@ int main(void)
         charleix = 'a';
 #define a 4
 #define b 5+1
+#define xxxx 2
+#define xx xx##xx
+#define X xx
 #define MUL(a,b) ((a)*(b))//修改处1
 #define concat(x, y) x ## y
+#define cmd   1 ## a
+#define cmda  cmd   //cmda 解析为1a，并不会先替代
+#define CON(x,y)   MUL(concat(x,y),15)
     c = MUL(a, b);//修改处2
+    int xxx = CON(1, X);
     printf("c=%d\n", c);
     printf("%d\n", concat(1, 2));
 
@@ -40,7 +47,9 @@ int main(void)
 #define VsersionF(m,n) _VsersionF(m,n)
 #define _VsersionX(m,n) #m ## #n
 #define VsersionX(m,n) _VsersionX(m,n)
+#define VsersionF__(m,n) VsersionF(m,n)
     char ad[64] = VsersionF(v1, V3);
+    char ah[64] = VsersionF__(v1, V3);
     char aa[64] = VsersionX(v0, v8);
     printf("ad %-28s\n",ad);
     printf("aa %-28s", aa);
